@@ -80,7 +80,8 @@ public class LoginActivity extends AppCompatActivity
         {
             Toast.makeText (this, "Please enter your password", Toast.LENGTH_SHORT).show ();
         }
-        else{
+        else
+            {
             loadingBar.setTitle ("Login Your Account");
             loadingBar.setMessage ("Please wait while we are checking the credentials");
             loadingBar.setCanceledOnTouchOutside (false);
@@ -99,17 +100,19 @@ public class LoginActivity extends AppCompatActivity
 
 
 
-//        if(cheBoxRememberMe.isChecked ())
-//        {
-//            Paper.book ().write (Prevalent.UserPhoneKey,phone);
-//            Paper.book ().write (Prevalent.UserPasswordKey,password);
-//        }
+        if(cheBoxRememberMe.isChecked ())
+        {
+            Paper.book ().write (Prevalent.UserPhoneKey,phone);
+            Paper.book ().write (Prevalent.UserPasswordKey,password);
+        }
 
 
 
-        RootRef.addListenerForSingleValueEvent (new ValueEventListener() {
+        RootRef.addListenerForSingleValueEvent (new ValueEventListener()
+        {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+            {
                 if(dataSnapshot.child (parentDbName).child (phone).exists()){   //parentDbName = Users or Admins
                     Users userData = dataSnapshot.child (parentDbName).child (phone).getValue (Users.class);
                     // Toast.makeText (loginActivity.this, "Checked", Toast.LENGTH_SHORT).show ();
@@ -153,7 +156,8 @@ public class LoginActivity extends AppCompatActivity
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+            public void onCancelled(@NonNull DatabaseError databaseError)
+            {
 
             }
         });
