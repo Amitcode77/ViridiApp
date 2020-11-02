@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "811735738433",
+    "firebase_url": "https://viridi-ad9ae.firebaseio.com",
+    "project_id": "viridi-ad9ae",
+    "storage_bucket": "viridi-ad9ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:811735738433:android:ccbbbd3d7fa76adef4bec0",
+        "android_client_info": {
+          "package_name": "com.example.viridi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "811735738433-2d0vmfjptv29sb70lod4st3bkkrrkaji.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.viridi",
+            "certificate_hash": "7aeaa73b717835f746941bc3af5eb19ce052f9f6"
+          }
+        },
+        {
+          "client_id": "811735738433-aj3i215joqo3sv2bev57tss8ko45mp1k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANgV-iru3dsMjeTw6HanWFtgGam49EPjQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "811735738433-aj3i215joqo3sv2bev57tss8ko45mp1k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
