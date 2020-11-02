@@ -9,7 +9,15 @@
         android:roundIcon="@drawable/applogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".CraftMarketActivity"></activity>
+        <activity android:name=".BookActivity" />
+        <activity android:name=".LearnActivity" />
+        <activity android:name=".SellActivity" />
+        <activity
+            android:name=".ui.login.LearnActivity"
+            android:label="@string/title_activity_learn" />
+        <activity android:name=".BuyActivity" />
+        <activity android:name=".SettingsActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignUpActivity" />

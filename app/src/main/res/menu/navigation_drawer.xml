@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:title="Book"
+            android:id="@+id/book"
+            android:icon="@drawable/bookbook"/>
+
+        <item
+            android:title="Buy"
+            android:id="@+id/buy"
+            android:icon="@drawable/buybuy"/>
+
+        <item
+            android:title="Sell"
+            android:id="@+id/sell"
+            android:icon="@drawable/sellsell"/>
+
+        <item
+            android:title="Learn"
+            android:id="@+id/learn"
+            android:icon="@drawable/learnlearn"/>
+
+        <item
+            android:title="Craft work"
+            android:id="@+id/craftWork"
+            android:icon="@drawable/craftwork"/>
+
+    </group>
+</menu>
