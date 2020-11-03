@@ -38,53 +38,57 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setSelectedItemId(R.id.book);
         bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment selectFragment = null;
                 switch (item.getItemId()) {
                     case R.id.book:
-                        selectFragment = new BookFragment();
-                        break;
+                        return true;
                     case R.id.buy:
-                        selectFragment = new BuyFragment();
-                        break;
+                        startActivity(new Intent(getApplicationContext(), BuyActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
                     case R.id.sell:
-                        selectFragment = new SellFragment();
-                        break;
+                        startActivity(new Intent(getApplicationContext(), SellActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
                     case R.id.learn:
-                        selectFragment = new LearnFragment();
-                        break;
+                        startActivity(new Intent(getApplicationContext(), LearnActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
                     case R.id.craft:
-                        selectFragment = new CraftMarketFragment();
-                        break;
+                        startActivity(new Intent(getApplicationContext(), CraftMarketActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
                 }
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectFragment).commit();
-                return true;
+                return false;
             }
         });
     }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        Fragment selectFragment = null;
         switch (item.getItemId()) {
             case R.id.book:
-                selectFragment = new BookFragment();
-                break;
+                return true;
             case R.id.buy:
-                selectFragment = new BuyFragment();
-                break;
+                startActivity(new Intent(getApplicationContext(), BuyActivity.class));
+                overridePendingTransition(0, 0);
+                return true;
             case R.id.sell:
-                selectFragment = new SellFragment();
-                break;
+                startActivity(new Intent(getApplicationContext(), SellActivity.class));
+                overridePendingTransition(0, 0);
+                return true;
             case R.id.learn:
-                selectFragment = new LearnFragment();
-                break;
-            case R.id.craftWork:
-                selectFragment = new CraftMarketFragment();
-                break;
+                startActivity(new Intent(getApplicationContext(), LearnActivity.class));
+                overridePendingTransition(0, 0);
+                return true;
+            case R.id.craft:
+                startActivity(new Intent(getApplicationContext(), CraftMarketActivity.class));
+                overridePendingTransition(0, 0);
+                return true;
         }
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectFragment).commit();
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
