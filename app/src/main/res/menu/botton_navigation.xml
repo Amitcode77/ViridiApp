@@ -8,17 +8,24 @@
         android:id="@+id/buy"
         android:icon="@drawable/buybuy"
         android:title="Buy" />
+
+    <item
+        android:id="@+id/craft"
+        android:icon="@drawable/craftwork"
+        android:title="Craft Market"/>
+
     <item
         android:id="@+id/sell"
         android:icon="@drawable/sellsell"
         android:title="Sell" />
+
+
+
     <item
         android:id="@+id/learn"
         android:icon="@drawable/learnlearn"
         android:title="Learn" />
 
-<item
-    android:id="@+id/craft"
-    android:icon="@drawable/craftwork"
-    android:title="Craft Work"/>
+
+
 </menu>

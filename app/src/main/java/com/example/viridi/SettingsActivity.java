@@ -41,8 +41,6 @@ public class SettingsActivity extends AppCompatActivity
     private CircleImageView profileImageView;
     private EditText fullNameEditText, userPhoneEditText, addressEditText,emailEditText;
     private TextView profileChangeTextBtn, closeTextBtn, saveTextBtn;
-
-
     private Uri imageUri;
     private String myUrl;
     private StorageReference storageProfilePictureReference;
@@ -136,18 +134,17 @@ public class SettingsActivity extends AppCompatActivity
         {
             Toast.makeText(this, "Name is Mandatory!", Toast.LENGTH_SHORT).show();
         }
-//        else if(TextUtils.isEmpty(userPhoneEditText.getText().toString()))
-//        {
-//            Toast.makeText(this, "Phone is Mandatory!", Toast.LENGTH_SHORT).show();
-//        }
+
         else if(TextUtils.isEmpty(addressEditText.getText().toString()))
         {
             Toast.makeText(this, "Address is Mandatory!", Toast.LENGTH_SHORT).show();
         }
+
         else if(TextUtils.isEmpty(emailEditText.getText().toString()))
         {
             Toast.makeText(this, "Email is Mandatory!", Toast.LENGTH_SHORT).show();
         }
+
         else if(checker.equals("clicked"))
         {
             uploadImage ();

@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DemoActivity">
+    tools:context=".DemoActivity"
 
+    >
 
     <TextView
         android:id="@+id/text"
@@ -24,6 +25,5 @@
         android:src="@drawable/construction"
         android:layout_below="@+id/text"
         />
-
 
 </RelativeLayout>

@@ -90,8 +90,8 @@
         android:layout_height="60dp"
         android:layout_marginHorizontal="15dp"
         android:hint="Write you code here..."
-        android:textColor="@android:color/white"
-        android:textColorHint="@android:color/white"
+        android:textColor="@android:color/primary_text_light_nodisable"
+        android:textColorHint="@android:color/primary_text_light_nodisable"
         android:inputType="phone"
         android:singleLine="true"
         android:layout_below="@+id/register_username_input"
@@ -102,7 +102,7 @@
         android:textSize="18dp"
         android:drawableTint="@android:color/white"
         android:background="@drawable/input_design"
-        android:visibility="invisible"
+        android:visibility="gone"
         />
 
     <EditText

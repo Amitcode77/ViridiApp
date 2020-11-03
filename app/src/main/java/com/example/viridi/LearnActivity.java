@@ -9,6 +9,6 @@ public class LearnActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_learn2);
+        setContentView(R.layout.activity_learn);
     }
 }
