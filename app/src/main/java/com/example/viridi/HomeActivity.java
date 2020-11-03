@@ -6,11 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -34,32 +36,55 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-    }
 
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment selectFragment = null;
+                switch (item.getItemId()) {
+                    case R.id.book:
+                        selectFragment = new BookFragment();
+                        break;
+                    case R.id.buy:
+                        selectFragment = new BuyFragment();
+                        break;
+                    case R.id.sell:
+                        selectFragment = new SellFragment();
+                        break;
+                    case R.id.learn:
+                        selectFragment = new LearnFragment();
+                        break;
+                    case R.id.craft:
+                        selectFragment = new CraftMarketFragment();
+                        break;
+                }
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectFragment).commit();
+                return true;
+            }
+        });
+    }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Fragment selectFragment = null;
         switch (item.getItemId()) {
             case R.id.book:
-                Intent intBook = new Intent(HomeActivity.this, BookActivity.class);
-                startActivity(intBook);
+                selectFragment = new BookFragment();
                 break;
             case R.id.buy:
-                Intent intBuy = new Intent(HomeActivity.this, BuyActivity.class);
-                startActivity(intBuy);
+                selectFragment = new BuyFragment();
                 break;
             case R.id.sell:
-                Intent intSell = new Intent(HomeActivity.this, SellActivity.class);
-                startActivity(intSell);
+                selectFragment = new SellFragment();
                 break;
             case R.id.learn:
-                Intent intLearn = new Intent(HomeActivity.this, LearnActivity.class);
-                startActivity(intLearn);
+                selectFragment = new LearnFragment();
                 break;
             case R.id.craftWork:
-                Intent intent1 = new Intent(HomeActivity.this, CraftMarketActivity.class);
-                startActivity(intent1);
+                selectFragment = new CraftMarketFragment();
                 break;
         }
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectFragment).commit();
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
