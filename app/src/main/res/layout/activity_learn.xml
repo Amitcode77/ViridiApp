@@ -56,18 +56,32 @@
             android:layout_marginTop="10dp"
             app:videoId="qfAfzP1TJJM"
             />
-        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-            android:id="@+id/youtube_player_view3"
+<!--        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView-->
+<!--            android:id="@+id/youtube_player_view3"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:showFullScreenButton="false"-->
+<!--            app:autoPlay="false"-->
+<!--            app:showYouTubeButton="false"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            app:videoId="CJDDM-GE2i0"-->
+<!--            />-->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="180dp"/>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:showFullScreenButton="false"
-            app:autoPlay="false"
-            app:showYouTubeButton="false"
-            android:layout_marginTop="10dp"
-            app:videoId="CJDDM-GE2i0"
-            />
-
-
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="7dp"
+            android:background="@color/colorAccent"
+            app:itemBackground="?android:attr/windowBackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/botton_navigation"
+            tools:layout_editor_absoluteY="0dp" />
 
 
 </LinearLayout>
