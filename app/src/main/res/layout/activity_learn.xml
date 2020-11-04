@@ -1,29 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".DemoActivity">-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/text"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Under construction"-->
+<!--        android:textSize="50sp"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textStyle="italic|bold"-->
+<!--        android:layout_marginTop="200dp"-->
+<!--        />-->
+
+<!--    <ImageView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/construction"-->
+<!--        android:layout_below="@+id/text"-->
+<!--        />-->
+
+
+<!--</RelativeLayout>-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DemoActivity">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:orientation="vertical"
+    >
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/youtube_player_view1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:showFullScreenButton="false"
+            app:autoPlay="false"
+            app:showYouTubeButton="false"
+            android:layout_marginTop="10dp"
+            app:videoId="sOF1bdK5v6A"
+            />
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/youtube_player_view2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:showFullScreenButton="false"
+            app:autoPlay="false"
+            app:showYouTubeButton="false"
+            android:layout_marginTop="10dp"
+            app:videoId="qfAfzP1TJJM"
+            />
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/youtube_player_view3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:showFullScreenButton="false"
+            app:autoPlay="false"
+            app:showYouTubeButton="false"
+            android:layout_marginTop="10dp"
+            app:videoId="CJDDM-GE2i0"
+            />
 
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Under construction"
-        android:textSize="50sp"
-        android:textAlignment="center"
-        android:textStyle="italic|bold"
-        android:layout_marginTop="200dp"
-        />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/construction"
-        android:layout_below="@+id/text"
-        />
 
 
-</RelativeLayout>
+
+
+
+
+</LinearLayout>
