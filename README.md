@@ -64,6 +64,7 @@ LEARN SKILLS: we need to learn to earn. So, this feature of your app provides th
 ## Try it out🔌
 
 Here is a link to the apk for trying it out: [Click here to download our APK file](https://drive.google.com/file/d/1L9E63ikpA3_Z-fRElz6-tgILeNyPJsm2/view?usp=sharing)
+Link to website : https://yachika30.github.io/home.html
 
 ## LICENSE 📜
 
