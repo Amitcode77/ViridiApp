@@ -18,13 +18,13 @@
 ## Introduction 📌
 More than 65.6 % of people in India are living in the rural areas having the farming as the primary source to earn their living. Still the farmers did not know how to deal with the agricultural waste. Most of the farmers burn the stubbles left which results in the growing of air pollution and also having the bad impact in the soil itself which is also making the cultivity of farmers very less. 
 
-## Technology Stack 🏁
+## Technology Stack 🔧
 
 * [JAVA](https://www.java.com/en/)
 * [KOTLIN](https://kotlinlang.org/)
 * [Android Native](https://developer.android.com/ndk)
 * [FIREBASE](https://firebase.google.com/)
-## API used:
+## API used 🔌
 * [Youtube Player View](https://developers.google.com/youtube/android/player)
 * [Paper Library](https://github.com/pilgr/Paper)
 * [Picasso](https://square.github.io/picasso/)
