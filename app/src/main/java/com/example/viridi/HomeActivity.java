@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.viridi.Model.Users;
 import com.example.viridi.Prevalent.Prevalent;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -90,6 +91,38 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 //               userNameTextView.setText(Prevalent.currentOnlineUsers.getName());
 //        Picasso.get().load(Prevalent.currentOnlineUsers.getImage()).placeholder(R.drawable.profile).into(profileImageView);
 
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setSelectedItemId(R.id.book);
+        bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.book:
+                        return true;
+                    case R.id.buy:
+                        startActivity(new Intent(getApplicationContext(),BuyActivity.class));
+                        finish();
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.sell:
+                        startActivity(new Intent(getApplicationContext(),SellActivity.class));
+                        finish();
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.learn:
+                        startActivity(new Intent(getApplicationContext(),LearnActivity.class));
+                        finish();
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.craft:
+                        startActivity(new Intent(getApplicationContext(),CraftMarketActivity.class));
+                        finish();
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
 
 
     }

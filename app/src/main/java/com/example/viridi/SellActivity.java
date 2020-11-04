@@ -14,26 +14,13 @@ import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
-public class SellActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private DrawerLayout drawer;
+public class SellActivity extends AppCompatActivity {
 
-    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sell);
-        toolbar = findViewById(R.id.toolBar);
-        setSupportActionBar(toolbar);
-
-        drawer = findViewById(R.id.drawer_activity);
-
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setSelectedItemId(R.id.sell);
@@ -43,20 +30,24 @@ public class SellActivity extends AppCompatActivity implements NavigationView.On
                 switch (item.getItemId()) {
                     case R.id.book:
                         startActivity(new Intent(getApplicationContext(), BookActivity.class));
+                        finish();
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.buy:
                         startActivity(new Intent(getApplicationContext(), BuyActivity.class));
+                        finish();
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.sell:
                         return true;
                     case R.id.learn:
                         startActivity(new Intent(getApplicationContext(), LearnActivity.class));
+                        finish();
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.craft:
                         startActivity(new Intent(getApplicationContext(), CraftMarketActivity.class));
+                        finish();
                         overridePendingTransition(0, 0);
                         return true;
                 }
@@ -65,38 +56,5 @@ public class SellActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.book:
-                return true;
-            case R.id.buy:
-                startActivity(new Intent(getApplicationContext(), BuyActivity.class));
-                overridePendingTransition(0, 0);
-                return true;
-            case R.id.sell:
-                startActivity(new Intent(getApplicationContext(), SellActivity.class));
-                overridePendingTransition(0, 0);
-                return true;
-            case R.id.learn:
-                startActivity(new Intent(getApplicationContext(), LearnActivity.class));
-                overridePendingTransition(0, 0);
-                return true;
-            case R.id.craft:
-                startActivity(new Intent(getApplicationContext(), CraftMarketActivity.class));
-                overridePendingTransition(0, 0);
-                return true;
-        }
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
 
-    @Override
-    public void onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
 }

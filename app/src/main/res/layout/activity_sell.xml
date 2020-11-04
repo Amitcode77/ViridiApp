@@ -6,24 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".DemoActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation">
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Under construction"
-        android:textSize="50sp"
-        android:textAlignment="center"
-        android:textStyle="italic|bold"
-        android:layout_marginTop="200dp"
-        />
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:text="Under construction"
+            android:textAlignment="center"
+            android:textSize="50sp"
+            android:textStyle="italic|bold" />
 
-    <ImageView
-        android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text"
+            android:src="@drawable/construction" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/construction"
-        android:layout_below="@+id/text"
-        />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="7dp"
+        android:background="@color/colorAccent"
+        app:itemBackground="?android:attr/windowBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/botton_navigation"
+        tools:layout_editor_absoluteY="0dp" />
 
 
 </RelativeLayout>

@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ import com.example.viridi.Model.Products;
 import com.example.viridi.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -23,8 +25,7 @@ import com.squareup.picasso.Picasso;
 
 import io.paperdb.Paper;
 
-public class CraftMarketActivity extends AppCompatActivity
-{
+public class CraftMarketActivity extends AppCompatActivity {
 
     private DatabaseReference ProductsRef;
     private RecyclerView recyclerView;
@@ -32,12 +33,44 @@ public class CraftMarketActivity extends AppCompatActivity
     TextView wantToSell;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_craft_market);
 
-        ProductsRef = FirebaseDatabase.getInstance ().getReference ().child ("Products");
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setSelectedItemId(R.id.craft);
+        bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.book:
+                        startActivity(new Intent(getApplicationContext(), BookActivity.class));
+                        finish();
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.buy:
+                        startActivity(new Intent(getApplicationContext(), BuyActivity.class));
+                        finish();
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.sell:
+                        startActivity(new Intent(getApplicationContext(), LearnActivity.class));
+                        finish();
+                        return true;
+                    case R.id.learn:
+                        startActivity(new Intent(getApplicationContext(), CraftMarketActivity.class));
+                        finish();
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.craft:
+                        return true;
+                }
+                return false;
+            }
+        });
+
+
+        ProductsRef = FirebaseDatabase.getInstance().getReference().child("Products");
         Paper.init(this);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -60,15 +93,14 @@ public class CraftMarketActivity extends AppCompatActivity
         wantToSell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(CraftMarketActivity.this,AdminCategoryActivity.class);
+                Intent intent = new Intent(CraftMarketActivity.this, AdminCategoryActivity.class);
                 startActivity(intent);
             }
         });
 
     }
 
-    protected void onStart()
-    {
+    protected void onStart() {
         super.onStart();
 
         FirebaseRecyclerOptions<Products> options =
@@ -78,21 +110,19 @@ public class CraftMarketActivity extends AppCompatActivity
 
 
         FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter =
-                new FirebaseRecyclerAdapter<Products, ProductViewHolder> (options) {
+                new FirebaseRecyclerAdapter<Products, ProductViewHolder>(options) {
                     @Override
-                    protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final Products model)
-                    {
+                    protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final Products model) {
                         holder.txtProductName.setText(model.getPname());
                         holder.txtProductDescription.setText(model.getDescription());
-                        holder.txtProductPrice.setText("Price : ₹" + model.getPrice() );
-                        Picasso.get ().load (model.getImage ()).into (holder.imageView);
+                        holder.txtProductPrice.setText("Price : ₹" + model.getPrice());
+                        Picasso.get().load(model.getImage()).into(holder.imageView);
 
                         holder.itemView.setOnClickListener(new View.OnClickListener() {
                             @Override
-                            public void onClick(View v)
-                            {
-                                Intent intent = new Intent(CraftMarketActivity.this,ProductDetailsActivity.class);
-                                intent.putExtra("pid",model.getPid());
+                            public void onClick(View v) {
+                                Intent intent = new Intent(CraftMarketActivity.this, ProductDetailsActivity.class);
+                                intent.putExtra("pid", model.getPid());
                                 startActivity(intent);
                             }
                         });
@@ -100,8 +130,7 @@ public class CraftMarketActivity extends AppCompatActivity
 
                     @NonNull
                     @Override
-                    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
-                    {
+                    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_items_layout, parent, false);
                         ProductViewHolder holder = new ProductViewHolder(view);
                         return holder;
@@ -110,5 +139,4 @@ public class CraftMarketActivity extends AppCompatActivity
         recyclerView.setAdapter(adapter);
         adapter.startListening();
     }
-
 }
