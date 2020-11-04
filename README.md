@@ -31,7 +31,7 @@ More than 65.6 % of people in India are living in the rural areas having the far
 
 ## Application Preview 👀
 
-![image](https://github.com/apoorv11jain/ViridiApp/blob/main/WhatsApp%20Image%202020-11-04%20at%209.04.00%20PM.jpeg)
+![image](https://github.com/apoorv11jain/ViridiApp/blob/main/WhatsApp%20Image%202020-11-04%20at%209.27.04%20PM.jpeg)
 
 
 ## 🏃‍♂️ Why VIRIDI 🤔?
